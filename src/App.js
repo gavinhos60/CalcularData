@@ -4,9 +4,9 @@ import Icone from "./image/icone.png";
 import React, { useState } from 'react';
 
 function App() {
-  const [diffInYears, setDiffInYears] = useState(0);
-  const [diffInMonths, setDiffInMonths] = useState(0);
-  const [diffInRemainingDays, setDiffInRemainingDays] = useState(0);
+  const [diffInYears, setDiffInYears] = useState("--");
+  const [diffInMonths, setDiffInMonths] = useState("--");
+  const [diffInRemainingDays, setDiffInRemainingDays] = useState("--");
 
   function alerta() {
     var dia = document.getElementById("dia").value;
@@ -45,6 +45,7 @@ function App() {
               type="text"
               id="dia"
               required
+              placeholder="DD"
               className="border-2 border-gray-300 rounded w-full md:w-40 h-20 mt-2 p-5 text-3xl"
             />
           </div>
@@ -53,6 +54,7 @@ function App() {
             <input
               type="text"
               id="mes"
+              placeholder="MM"
               className="border-2 border-gray-300 rounded w-full md:w-40 h-20 mt-2 p-5 text-3xl"
             />
           </div>
@@ -60,11 +62,12 @@ function App() {
             <h1 className="text-gray-500">Y E A R</h1>
             <input
               type="text"
+              placeholder="YYYY"
               id="ano"
               className="border-2 border-gray-300 rounded w-full md:w-40 h-20 mt-2 p-5 text-3xl"
             />
           </div>
-          <div className="w-full md:w-auto mt-4 md:mt-0 ml-36 mt-8">
+          <div className="w-full md:w-auto mt-4 md:mt-0 ml-36">
             <button
               onClick={alerta}
               className="w-28 h-28 bg-icone rounded-full flex justify-center"
